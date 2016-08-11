@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Datas List</title>
+  <style>
+    #header{
+      width: auto;
+      height: 30%;
+      background-color: #d3d3d3
+    }
+
+    table {
+      margin-top: 5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="img">
+      <img src="unipgracingteam.jpg" alt="logo" >
+    </div>
+  </div>
+  <div id="">
+    {% for data in datas %}
+    <table border="1 px">
+      <tr>
+        <td>km/h: </td>
+        <td>{{ data.speed }}</td>
+      </tr>
+      <tr>
+        <td>a: </td>
+        <td>{{ data.acceleration }}</td>
+      </tr>
+    </table>
+    {% endfor %}
+  </div>
+</body>
+</html>
