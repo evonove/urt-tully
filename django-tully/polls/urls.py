@@ -5,7 +5,7 @@ from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
 
 # Create a router and register our viewsets with it.
-router = DefaultRouter(schema_title='Pastebin API')
+router = DefaultRouter()
 router.register(r'data', views.DataViewSet)
 router.register(r'users', views.UserViewSet)
 
