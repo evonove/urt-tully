@@ -1,5 +1,5 @@
 from polls.models import Data
-from polls.serializers import PollSerializer
+from polls.serializers import DataSerializer
 from rest_framework import generics, permissions, response, renderers, viewsets
 from django.contrib.auth.models import User
 from polls.serializers import UserSerializer
@@ -19,12 +19,8 @@ def api_root(request, format=None):
 
 class DataViewSet(viewsets.ModelViewSet):
     queryset = Data.objects.all()
-    serializer_class = PollSerializer
+    serializer_class = DataSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
-
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
