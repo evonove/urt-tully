@@ -1,5 +1,5 @@
 from rest_framework.test import APITestCase
-from polls.models import Data
+from device.models import Data
 from rest_framework import status
 from collections import OrderedDict
 from django.contrib.auth import get_user_model

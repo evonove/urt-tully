@@ -1,9 +1,9 @@
-from polls.models import Data
-from polls.serializers import DataSerializer
+from device.models import Data
+from device.serializers import DataSerializer
 from rest_framework import generics, permissions, response, renderers, viewsets
 from django.contrib.auth.models import User
-from polls.serializers import UserSerializer
-from polls.permissions import IsOwnerOrReadOnly
+from device.serializers import UserSerializer
+from device.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view, detail_route
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
