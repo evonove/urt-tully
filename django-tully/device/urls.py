@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from device import views
-from device.views import DataViewSet, api_root
+from device.views import DataViewSet
 from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
 
