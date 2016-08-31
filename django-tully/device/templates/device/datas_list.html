@@ -22,9 +22,9 @@
       <img src="unipgracingteam.jpg" alt="logo" >
     </div>
   </div>
-  <div id="">
-    {% for data in datas %}
+  <div>
     <table border="1 px">
+      {% for data in datas %}
       <tr>
         <td>km/h: </td>
         <td>{{ data.speed }}</td>
@@ -33,8 +33,8 @@
         <td>a: </td>
         <td>{{ data.acceleration }}</td>
       </tr>
+      {% endfor %}
     </table>
-    {% endfor %}
   </div>
 </body>
 </html>
