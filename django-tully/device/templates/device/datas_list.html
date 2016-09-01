@@ -23,7 +23,7 @@
     </div>
   </div>
   <div>
-    <table border="1 px">
+    <table border="1 px">{% csrf_token %}
       {% for data in datas %}
       <tr>
         <td>km/h: </td>
