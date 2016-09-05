@@ -140,5 +140,5 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
-    'PAGE_SIZE':10
+    'PAGE_SIZE':10,
 }
