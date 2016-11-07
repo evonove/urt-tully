@@ -1,0 +1,17 @@
+#header{
+  text-align: center;
+  width: auto;
+  height: 20%;
+  background-color: #d3d3d3
+}
+
+table {
+  table-layout: fixed;
+  text-align: center;
+  margin: 5px auto 0;
+  width: 100%;
+}
+
+td,tr {
+  padding: 10px;
+}
