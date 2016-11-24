@@ -1,6 +1,6 @@
 $( document ).ready(function doPoll() {
 	$.ajax({
-		url: "https://tech-team-unipgracingteam.herokuapp.com",
+		url: "https://tech-team-unipgracingteam.herokuapp.com/data/",
 		method: "GET",
 		contentType: "application/json",
 		dataType: "json"

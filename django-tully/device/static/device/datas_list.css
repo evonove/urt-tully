@@ -27,8 +27,8 @@ hr {
 
 .td-text {
   padding: 30px 10px;
-  background-color: rgb(238, 238, 238);
-  color: rgb(111, 111, 111);
+  background-color: #eeeeee;
+  color: #6f6f6f;
 }
 
 .errors {
