@@ -1,0 +1,51 @@
+{% extends "device/base.html" %}
+
+{% block login %}
+
+{% if form.errors %}
+<p class="errors">Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p class="errors">Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p class="errors">Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<div class="login-header">
+    <h1 id="site-name">Django administration</h1>
+</div>
+<div class="login-header-sub">
+    <h3>Login</h3>
+</div>
+<div id="content">
+    <form method="post" action="{% url 'login' %}" class="form">
+    {% csrf_token %}
+    <table class="table-login">
+        <tr>
+            <td class="td-login">{{ form.username.label_tag }}</td>
+            <td class="td-login">{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td class="td-login">{{ form.password.label_tag }}</td>
+            <td class="td-login">{{ form.password }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="td-login" id="btn"> 
+                <input type="submit" value="Login" /> 
+                <input type="hidden" name="next" value="/" /> 
+            </td>
+        </tr>
+    </table>
+
+    
+    </form>
+
+    <p id="pass"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    
+</div>
+
+{% endblock %}

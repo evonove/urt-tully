@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Data(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
     rpm = models.IntegerField()
     inj1 = models.IntegerField()
     inj2 = models.IntegerField()

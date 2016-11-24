@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE>
+<html>
+<head>
+  <title>Datas List</title>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'device/datas_list.css' %}" />
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+</head>
+<body>
+  <div id="header">
+    <div id="img">
+      <img src="{% static 'device/unipg.jpg' %}" alt="logo unipg racing team">
+    </div>
+  </div>
+  <script src="{% static 'device/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'device/refresh_table.js' %}" type="text/javascript"></script>
+  <hr>
+  {% block table %}
+  {% endblock %}
+
+  {% block login %}
+  {% endblock %}  
+</body>
+</html>
