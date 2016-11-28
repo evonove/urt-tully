@@ -1,0 +1,119 @@
+body {
+  font-family: 'Questrial', sans-serif;  
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#header{
+  text-align: center;
+  width: auto;
+  height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-list {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.td-text {
+  padding: 30px 10px;
+  background-color: #eeeeee;
+  color: #6f6f6f;
+}
+
+.errors {
+  text-align: center;
+  color: red;
+}
+
+div {
+  display: block;
+}
+
+.login-header {
+  width: auto;
+  height: 80px;
+  padding-left: 40px;
+  background: #417690;
+  line-height: 40px;
+  color: #ffc;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.login-header-sub {
+  width: auto;
+  height: 40px;
+  padding-left: 40px;
+  background: #79aec8;
+  line-height: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+#content {
+  padding: 20px 40px;
+  background-color: #f2f2f2;
+}
+
+.form {
+  text-align: center;
+}
+
+.table-login {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pass {
+  text-align: center;
+}
+
+.td-login {
+  text-align: center;
+  font-size: 18px;
+
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}

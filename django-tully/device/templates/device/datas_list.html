@@ -1,40 +1,158 @@
-<!DOCTYPE>
-<html>
-<head>
-  <title>Datas List</title>
-  <style>
-    #header{
-      width: auto;
-      height: 30%;
-      background-color: #d3d3d3
-    }
+{% extends 'device/base.html' %}
 
-    table {
-      margin-top: 5px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-</head>
-<body>
-  <div id="header">
-    <div id="img">
-      <img src="unipgracingteam.jpg" alt="logo" >
+{% block table %}
+    <div class="login-header">
+        <h1>Data Table</h1>
     </div>
-  </div>
-  <div id="">
-    {% for data in datas %}
-    <table border="1 px">
-      <tr>
-        <td>km/h: </td>
-        <td>{{ data.speed }}</td>
-      </tr>
-      <tr>
-        <td>a: </td>
-        <td>{{ data.acceleration }}</td>
-      </tr>
-    </table>
-    {% endfor %}
-  </div>
-</body>
-</html>
+    <div class="login-header-sub">
+        <p><a style="color: white;" href="{% url 'logout' %}">Logout</a></p>
+    </div>
+        <table class="data-list">
+            <tr style="border: 1px solid grey;">
+                <th class="td-text">RMP:</th>
+                <td id="rpm" class="td-text" style="background-color: #e1e1e1;">{{ rpm }}</td>
+                <th class="td-text">INJ1:</th>
+                <td id="inj1" class="td-text" style="background-color: #e1e1e1;">{{ inj1 }}</td>
+                <th class="td-text">INJ2:</th>
+                <td id="inj2" class="td-text" style="background-color: #e1e1e1;">{{ inj2 }}</td>
+                <th class="td-text">IGN1:</th>
+                <td id="ign1" class="td-text" style="background-color: #e1e1e1;">{{ ign1 }}</td>
+                <th class="td-text">IGN2:</th>
+                <td id="ign2" class="td-text" style="background-color: #e1e1e1;">{{ ign2 }}</td>
+                <th class="td-text">WTEMP:</th>
+                <td id="wtemp" class="td-text" style="background-color: #e1e1e1;">{{ wtemp }}</td>
+                <th class="td-text">AIRTEMP:</th>
+                <td id="airtemp" class="td-text" style="background-color: #e1e1e1;">{{ airtemp }}</td>
+                <th class="td-text">AIRP:</th>
+                <td id="airp" class="td-text" style="background-color: #e1e1e1;">{{ airp }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">OILT:</th>
+                <td id="oilt" class="td-text" style="background-color: #e1e1e1;">{{ oilt }}</td>
+                <th class="td-text">TPS:</th>
+                <td id="tps" class="td-text" style="background-color: #e1e1e1;">{{ tps }}</td>
+                <th class="td-text">LAMBDA:</th>
+                <td id="lambda_1" class="td-text" style="background-color: #e1e1e1;">{{ lambda_1 }}</td>
+                <th class="td-text">LAMBDA_TRG:</th>
+                <td id="lambda_trg" class="td-text" style="background-color: #e1e1e1;">{{ lambda_trg }}</td>
+                <th class="td-text">SPEED_FL:</th>
+                <td id="speed_fl" class="td-text" style="background-color: #e1e1e1;">{{ speed_fl }}</td>
+                <th class="td-text">SPEED_FR:</th>
+                <td id="speed_fr" class="td-text" style="background-color: #e1e1e1;">{{ speed_fr }}</td>
+                <th class="td-text">SPEED_RL:</th>
+                <td id="speed_rl" class="td-text" style="background-color: #e1e1e1;">{{ speed_rl }}</td>
+                <th class="td-text">SPEED_RR:</th>
+                <td id="speed_rr" class="td-text" style="background-color: #e1e1e1;">{{ speed_rr }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">VBATT:</th>
+                <td id="vbatt" class="td-text" style="background-color: #e1e1e1;">{{ vbatt }}</td>
+                <th class="td-text">AUX:</th>
+                <td id="aux" class="td-text" style="background-color: #e1e1e1;">{{ aux }}</td>
+                <th class="td-text">DET:</th>
+                <td id="det" class="td-text" style="background-color: #e1e1e1;">{{ det }}</td>
+                <th class="td-text">FCMP:</th>
+                <td id="fcmp" class="td-text" style="background-color: #e1e1e1;">{{ fcmp }}</td>
+                <th class="td-text">ECU_ERROR:</th>
+                <td id="ecu_error" class="td-text" style="background-color: #e1e1e1;">{{ ecu_error }}</td>
+                <th class="td-text">FPGA_ERROR:</th>
+                <td id="fpga_error" class="td-text" style="background-color: #e1e1e1;">{{ fpga_error }}</td>
+                <th class="td-text">STATUS:</th>
+                <td id="status" class="td-text" style="background-color: #e1e1e1;">{{ status }}</td>
+                <th class="td-text">DELTA:</th>
+                <td id="delta" class="td-text" style="background-color: #e1e1e1;">{{ delta }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">DWELL:</th>
+                <td id="dwell" class="td-text" style="background-color: #e1e1e1;">{{ dwell }}</td>
+                <th class="td-text">MAP_TC_SEL:</th>
+                <td id="map_tc_sel" class="td-text" style="background-color: #e1e1e1;">{{ map_tc_sel }}</td>
+                <th class="td-text">SLPF_FL:</th>
+                <td id="slpf_fl" class="td-text" style="background-color: #e1e1e1;">{{ slpf_fl }}</td>
+                <th class="td-text">SLPF_FR:</th>
+                <td id="slpf_fr" class="td-text" style="background-color: #e1e1e1;">{{ slpf_fr }}</td>
+                <th class="td-text">SLPF_RL:</th>
+                <td id="slpf_rl" class="td-text" style="background-color: #e1e1e1;">{{ slpf_rl }}</td>
+                <th class="td-text">SLPF_RR:</th>
+                <td id="slpf_rr" class="td-text" style="background-color: #e1e1e1;">{{ slpf_rr }}</td>
+                <th class="td-text">CUTOFF:</th>
+                <td id="cutoff" class="td-text" style="background-color: #e1e1e1;">{{ cutoff }}</td>
+                <th class="td-text">TIME:</th>
+                <td id="time" class="td-text" style="background-color: #e1e1e1;">{{ time }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">AUX_DATA1:</th>
+                <td id="aux_data1" class="td-text" style="background-color: #e1e1e1;">{{ aux_data1 }}</td>
+                <th class="td-text">AUX_DATA2:</th>
+                <td id="aux_data2" class="td-text" style="background-color: #e1e1e1;">{{ aux_data2 }}</td>
+                <th class="td-text">AUX_DATA3:</th>
+                <td id="aux_data3" class="td-text" style="background-color: #e1e1e1;">{{ aux_data3 }}</td>
+                <th class="td-text">AUX_DATA4:</th>
+                <td id="aux_data4" class="td-text" style="background-color: #e1e1e1;">{{ aux_data4 }}</td>
+                <th class="td-text">AUX_DATA5:</th>
+                <td id="aux_data5" class="td-text" style="background-color: #e1e1e1;">{{ aux_data5 }}</td>
+                <th class="td-text">AUX_DATA6:</th>
+                <td id="aux_data6" class="td-text" style="background-color: #e1e1e1;">{{ aux_data6 }}</td>
+                <th class="td-text">AUX_DATA7:</th>
+                <td id="aux_data7" class="td-text" style="background-color: #e1e1e1;">{{ aux_data7 }}</td>
+                <th class="td-text">AUX_DATA8:</th>
+                <td id="aux_data8" class="td-text" style="background-color: #e1e1e1;">{{ aux_data8 }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">AUX_DATA9:</th>
+                <td id="aux_data9" class="td-text" style="background-color: #e1e1e1;">{{ aux_data9 }}</td>
+                <th class="td-text">AUX_DATA10:</th>
+                <td id="aux_data10" class="td-text" style="background-color: #e1e1e1;">{{ aux_data10 }}</td>
+                <th class="td-text">AUX_DATA11:</th>
+                <td id="aux_data11" class="td-text" style="background-color: #e1e1e1;">{{ aux_data11 }}</td>
+                <th class="td-text">AUX_DATA12:</th>
+                <td id="aux_data12" class="td-text" style="background-color: #e1e1e1;">{{ aux_data12 }}</td>
+                <th class="td-text">AUX_DATA13:</th>
+                <td id="aux_data13" class="td-text" style="background-color: #e1e1e1;">{{ aux_data13 }}</td>
+                <th class="td-text">AUX_DATA14:</th>
+                <td id="aux_data14" class="td-text" style="background-color: #e1e1e1;">{{ aux_data14 }}</td>
+                <th class="td-text">AUX_DATA15:</th>
+                <td id="aux_data15" class="td-text" style="background-color: #e1e1e1;">{{ aux_data15 }}</td>
+                <th class="td-text">AUX_DATA16:</th>
+                <td id="aux_data16" class="td-text" style="background-color: #e1e1e1;">{{ aux_data16 }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">AUX_DATA17:</th>
+                <td id="aux_data17" class="td-text" style="background-color: #e1e1e1;">{{ aux_data17 }}</td>
+                <th class="td-text">AUX_DATA18:</th>
+                <td id="aux_data18" class="td-text" style="background-color: #e1e1e1;">{{ aux_data18 }}</td>
+                <th class="td-text">AUX_DATA19:</th>
+                <td id="aux_data19" class="td-text" style="background-color: #e1e1e1;">{{ aux_data19 }}</td>
+                <th class="td-text">AUX_DATA20:</th>
+                <td id="aux_data20" class="td-text" style="background-color: #e1e1e1;">{{ aux_data20 }}</td>
+                <th class="td-text">AUX_DATA21:</th>
+                <td id="aux_data21" class="td-text" style="background-color: #e1e1e1;">{{ aux_data21 }}</td>
+                <th class="td-text">AUX_DATA22:</th>
+                <td id="aux_data22" class="td-text" style="background-color: #e1e1e1;">{{ aux_data22 }}</td>
+                <th class="td-text">AUX_DATA23:</th>
+                <td id="aux_data23" class="td-text" style="background-color: #e1e1e1;">{{ aux_data23 }}</td>
+                <th class="td-text">AUX_DATA24:</th>
+                <td id="aux_data24" class="td-text" style="background-color: #e1e1e1;">{{ aux_data24 }}</td>
+              </tr>
+              <tr style="border: 1px solid gray;">
+                <th class="td-text">AUX_DATA25:</th>
+                <td id="aux_data25" class="td-text" style="background-color: #e1e1e1;">{{ aux_data25 }}</td>
+                <th class="td-text">AUX_DATA26:</th>
+                <td id="aux_data26" class="td-text" style="background-color: #e1e1e1;">{{ aux_data26 }}</td>
+                <th class="td-text">AUX_DATA27:</th>
+                <td id="aux_data27" class="td-text" style="background-color: #e1e1e1;">{{ aux_data27 }}</td>
+                <th class="td-text">AUX_DATA28:</th>
+                <td id="aux_data28" class="td-text" style="background-color: #e1e1e1;">{{ aux_data28 }}</td>
+                <th class="td-text">AUX_DATA29:</th>
+                <td id="aux_data29" class="td-text" style="background-color: #e1e1e1;">{{ aux_data29 }}</td>
+                <th class="td-text">AUX_DATA30:</th>
+                <td id="aux_data30" class="td-text" style="background-color: #e1e1e1;">{{ aux_data30 }}</td>
+                <th class="td-text">AUX_DATA31:</th>
+                <td id="aux_data31" class="td-text" style="background-color: #e1e1e1;">{{ aux_data31 }}</td>
+                <th class="td-text">AUX_DATA32:</th>
+                <td id="aux_data32" class="td-text" style="background-color: #e1e1e1;">{{ aux_data32 }}</td>
+              </tr>
+        </table>        
+    </div>
+
+{% endblock table %}
