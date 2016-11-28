@@ -22,7 +22,7 @@ class Data(models.Model):
     vbatt = models.IntegerField()
     aux = models.IntegerField()
     det = models.IntegerField()
-    fcmp = models.IntegerField()
+    fcmp = models.BigIntegerField()
     ecu_error = models.IntegerField()
     fpga_error = models.IntegerField()
     status = models.IntegerField()
